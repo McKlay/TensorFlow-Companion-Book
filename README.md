@@ -5,9 +5,9 @@
 
 ![Visitors](https://visitor-badge.laobi.icu/badge?page_id=McKlay.TensorFlow-Companion-Book)
 
-![Dark Mode Ready](https://img.shields.io/badge/UI-dark--mode-111827?style=flat&logo=visualstudio&logoColor=white)
 ![Dark Mode](https://img.shields.io/badge/theme-dark--mode-111827?style=flat&logo=materialdesign&logoColor=white)
 ![Built with TensorFlow](https://img.shields.io/badge/built%20with-TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/McKlay/TensorFlow-Companion-Book/blob/main/path_to_notebook.ipynb)
 
 # TensorFlow Builder’s Companion Book
 
