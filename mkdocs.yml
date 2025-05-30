@@ -1,0 +1,87 @@
+site_name: TensorFlow Builder’s Companion Book
+site_url: https://github.com/McKlay/tf-companion-book/
+site_author: Clay Mark Sarte
+site_description: A personal TensorFlow companion book by Clay Mark Sarte — deep dives into the TensorFlow API for learners, devs, and researchers.
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep blue
+    accent: indigo
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  navigation:
+    tabs: false
+
+nav:
+  - Home: index.md
+
+  - "📘 Part I: Understanding TensorFlow Fundamentals":
+      - Overview: PartI_overview.md
+      - "📄 Chapter 1: What is TensorFlow?": chapter1_what_is_tensorflow.md
+      - "📄 Chapter 2: Installation & Setup": chapter2_TF_architecture.md
+      - "📄 Chapter 3: TensorFlow vs. Keras": chapter3_tensorflow_vs_keras.md
+      - "📄 Chapter 4: Installation & Setup": chapter4_installation_and_setup.md
+      - "📄 Chapter 5: Hello, tf.tensor!": chapter5_Hello_tf_tensor.md
+
+  - "📘 Part II: Tensor Mechanics and Computation":
+      - Overview: PartII_overview.md
+      - "📄 Chapter 6: Tensor Indexing & Reshaping": chapter6_tensor_indexing_reshaping.md
+      - "📄 Chapter 7: Tensor Broadcasting": chapter7_tensor_broadcasting.md
+      - "📄 Chapter 8: Ragged, Sparse, & String Tensors": chapter8_ragged_sparse_string.md
+      - "📄 Chapter 9: Variables & Trainable Parameters": chapter9_variable_trainable_param.md
+      - "📄 Chapter 10: Automatic Differentiation": chapter10_automatic_differentiation.md
+      - "📄 Chapter 11: Graphs & Functions": chapter11_graphs_functions.md
+      - "📄 Chapter 12: Bitwise & Numerical Operations": chapter12_bitwise_numerical_ops.md
+
+  - "📘 Part III: Specialized Modules in torch":
+      - Overview: PartIII_overview.md
+      - "📄 Chapter 13: TensorFlow Keras API: Anatomy of a Model": chapter13_API.md
+      - "📄 Chapter 14: Building a Neural Network from Scratch": chapter14_nn_from_scratch.md
+      - "📄 Chapter 15: Layers & Activation Functions": chapter15_layers.md
+      - "📄 Chapter 16: Loss Functions & Optimizers": chapter16_loss_optim.md
+      - "📄 Chapter 17: Backpropagation & Gradient Descent": chapter17_backprop.md
+      - "📄 Chapter 18: Model Training with fit() and evaluate()": chapter18_training.md
+      - "📄 Chapter 19: Saving, Loading, and Callbacks": chapter19_saving_loading.md
+      - "📄 Chapter 20: Visualizing Model Progress with TensorBoard": chapter20_visualizing.md
+
+  - "📘 Part IV: Natural Language Processing with TensorFlow":
+      - Overview: PartIV_overview.md
+      - "📄 Chapter 21: Text Preprocessing & Tokenization": chapter21_text_tokenization.md
+      - "📄 Chapter 22: TF-IDF, Bag-of-Words Representations": chapter22_TF_IDF.md
+      - "📄 Chapter 23: RNNs & LSTMs": chapter23_RNN_LSTM.md
+      - "📄 Chapter 24: Transformers in TensorFlow (from scratch)": chapter24_transformers.md
+      - "📄 Chapter 25: NLP Projects": chapter25_projects.md
+
+  - "📘 Part V: Computer Vision in TensorFlow":
+      - Overview: PartV_overview.md
+      - "📄 Chapter 26: Convolution Layers & CNNs": chapter26_cnn.md
+      - "📄 Chapter 27: Data Augmentation": chapter27_data_augmentation.md
+      - "📄 Chapter 28: Image Classification": chapter28_img_class.md
+      - "📄 Chapter 29: Object Detection": chapter29_obj_detection.md
+      - "📄 Chapter 30: Face Mask Detection": chapter30_face_mask_dete.md
+      - "📄 Chapter 31: Image Segmentation": chapter31_image_segmentation.md
+      - "📄 Chapter 32: GANs for Image Generation": chapter32_GANs.md
+
+  - "📘 Part VI: Real-World Applications":
+      - Overview: PartVI_overview.md
+      - "📄 Chapter 33: Time Series Forecasting": chapter33_time_series.md
+      - "📄 Chapter 34: Recommender Systems": chapter34_recom_systems.md
+      - "📄 Chapter 35: TensorFlow Lite & Mobile Deployment": chapter35_TF_Lite.md
+      - "📄 Chapter 36: TensorFlow Extended (TFX) for Production Pipelines": chapter36_TFX.md
+      - "📄 Chapter 37: Bonus: Integrating TensorFlow with Hugging Face": chapter37_TF_HuggingFace.md
+
+  - "Appendices":
+      - "Appendices": appendices.md
+
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - codehilite:
+      guess_lang: false

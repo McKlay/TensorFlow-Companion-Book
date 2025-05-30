@@ -1,0 +1,2206 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A personal TensorFlow companion book by Clay Mark Sarte — deep dives into the TensorFlow API for learners, devs, and researchers.">
+      
+      
+        <meta name="author" content="Clay Mark Sarte">
+      
+      
+        <link rel="canonical" href="https://github.com/McKlay/tf-companion-book/chapter36_TFX/">
+      
+      
+        <link rel="prev" href="../chapter35_TF_Lite/">
+      
+      
+        <link rel="next" href="../chapter37_TF_HuggingFace/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>📄 Chapter 36: TensorFlow Extended (TFX) for Production Pipelines - TensorFlow Builder’s Companion Book</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-36-tensorflow-extended-tfx-for-production-pipelines" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="TensorFlow Builder’s Companion Book" class="md-header__button md-logo" aria-label="TensorFlow Builder’s Companion Book" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            TensorFlow Builder’s Companion Book
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              📄 Chapter 36: TensorFlow Extended (TFX) for Production Pipelines
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="TensorFlow Builder’s Companion Book" class="md-nav__button md-logo" aria-label="TensorFlow Builder’s Companion Book" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    TensorFlow Builder’s Companion Book
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📘 Part I: Understanding TensorFlow Fundamentals
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            📘 Part I: Understanding TensorFlow Fundamentals
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PartI_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter1_what_is_tensorflow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 1: What is TensorFlow?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter2_TF_architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 2: Installation & Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter3_tensorflow_vs_keras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 3: TensorFlow vs. Keras
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter4_installation_and_setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 4: Installation & Setup
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter5_Hello_tf_tensor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 5: Hello, tf.tensor!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📘 Part II: Tensor Mechanics and Computation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            📘 Part II: Tensor Mechanics and Computation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PartII_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter6_tensor_indexing_reshaping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 6: Tensor Indexing & Reshaping
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter7_tensor_broadcasting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 7: Tensor Broadcasting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter8_ragged_sparse_string/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 8: Ragged, Sparse, & String Tensors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter9_variable_trainable_param/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 9: Variables & Trainable Parameters
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter10_automatic_differentiation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 10: Automatic Differentiation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter11_graphs_functions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 11: Graphs & Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter12_bitwise_numerical_ops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 12: Bitwise & Numerical Operations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📘 Part III: Specialized Modules in torch
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            📘 Part III: Specialized Modules in torch
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PartIII_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter13_API/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 13: TensorFlow Keras API: Anatomy of a Model
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter14_nn_from_scratch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 14: Building a Neural Network from Scratch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter15_layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 15: Layers & Activation Functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter16_loss_optim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 16: Loss Functions & Optimizers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter17_backprop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 17: Backpropagation & Gradient Descent
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter18_training/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 18: Model Training with fit() and evaluate()
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter19_saving_loading/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 19: Saving, Loading, and Callbacks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter20_visualizing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 20: Visualizing Model Progress with TensorBoard
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📘 Part IV: Natural Language Processing with TensorFlow
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            📘 Part IV: Natural Language Processing with TensorFlow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PartIV_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter21_text_tokenization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 21: Text Preprocessing & Tokenization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter22_TF_IDF/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 22: TF-IDF, Bag-of-Words Representations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter23_RNN_LSTM/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 23: RNNs & LSTMs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter24_transformers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 24: Transformers in TensorFlow (from scratch)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter25_projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 25: NLP Projects
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📘 Part V: Computer Vision in TensorFlow
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            📘 Part V: Computer Vision in TensorFlow
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PartV_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter26_cnn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 26: Convolution Layers & CNNs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter27_data_augmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 27: Data Augmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter28_img_class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 28: Image Classification
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter29_obj_detection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 29: Object Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter30_face_mask_dete/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 30: Face Mask Detection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter31_image_segmentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 31: Image Segmentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter32_GANs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 32: GANs for Image Generation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    📘 Part VI: Real-World Applications
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            📘 Part VI: Real-World Applications
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PartVI_overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter33_time_series/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 33: Time Series Forecasting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter34_recom_systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 34: Recommender Systems
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter35_TF_Lite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 35: TensorFlow Lite & Mobile Deployment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 36: TensorFlow Extended (TFX) for Production Pipelines
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 36: TensorFlow Extended (TFX) for Production Pipelines
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-from-experiment-to-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction: From Experiment to Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-components-of-a-tfx-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components of a TFX Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-building-a-tfx-pipeline-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Building a TFX Pipeline (Basic)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Building a TFX Pipeline (Basic)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-directory-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Directory Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-pipeline-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Pipeline Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-feature-engineering-and-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Feature Engineering and Model Training
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-evaluating-and-pushing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Evaluating and Pushing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-orchestration-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional: Orchestration Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter37_TF_HuggingFace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    📄 Chapter 37: Bonus: Integrating TensorFlow with Hugging Face
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Appendices
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Appendices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Appendices
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-from-experiment-to-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction: From Experiment to Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-components-of-a-tfx-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components of a TFX Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-building-a-tfx-pipeline-basic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Building a TFX Pipeline (Basic)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Building a TFX Pipeline (Basic)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-directory-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1: Directory Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-pipeline-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define Pipeline Components
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-feature-engineering-and-model-training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3: Feature Engineering and Model Training
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-evaluating-and-pushing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4: Evaluating and Pushing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-orchestration-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional: Orchestration Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="chapter-36-tensorflow-extended-tfx-for-production-pipelines">Chapter 36: TensorFlow Extended (TFX) for Production Pipelines</h1>
+<blockquote>
+<p>“<em>Models aren’t magic — they’re the output of a pipeline that’s reproducible, testable, and scalable.</em>”</p>
+</blockquote>
+<h2 id="introduction-from-experiment-to-deployment">Introduction: From Experiment to Deployment</h2>
+<p>Training a model in a notebook is one thing — <strong>deploying it at scale</strong> in a robust production environment is a whole different story. That’s where TFX (TensorFlow Extended) comes in.</p>
+<p>TFX is an end-to-end ML platform for <strong>production-grade ML pipelines</strong> built around TensorFlow. It handles:</p>
+<ul>
+<li>
+<p>Data ingestion</p>
+</li>
+<li>
+<p>Data validation</p>
+</li>
+<li>
+<p>Feature engineering</p>
+</li>
+<li>
+<p>Model training</p>
+</li>
+<li>
+<p>odel validation</p>
+</li>
+<li>
+<p>Deployment</p>
+</li>
+</ul>
+<p>All with pipeline reproducibility, <strong>CI/CD</strong>, and version control baked in.</p>
+<hr />
+<h2 id="key-components-of-a-tfx-pipeline">Key Components of a TFX Pipeline</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExampleGen</td>
+<td>Ingest and split raw data (CSV, TFRecord, etc.)</td>
+</tr>
+<tr>
+<td>StatisticsGen</td>
+<td>Computes statistics over data</td>
+</tr>
+<tr>
+<td>SchemaGen</td>
+<td>Infers data schema from stats</td>
+</tr>
+<tr>
+<td>ExampleValidator</td>
+<td>Detects anomalies and missing values</td>
+</tr>
+<tr>
+<td>Transform</td>
+<td>Performs feature engineering</td>
+</tr>
+<tr>
+<td>Trainer</td>
+<td>Trains a model using TensorFlow</td>
+</tr>
+<tr>
+<td>Evaluator</td>
+<td>Measures model quality (blessing or rejection)</td>
+</tr>
+<tr>
+<td>Pusher</td>
+<td>Pushes the model to serving environment</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="example-building-a-tfx-pipeline-basic">Example: Building a TFX Pipeline (Basic)</h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>tfx
+</code></pre></div>
+<h3 id="step-1-directory-setup">Step 1: Directory Setup</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">PIPELINE_NAME</span> <span class="o">=</span> <span class="s2">&quot;sentiment_pipeline&quot;</span>
+<span class="n">PIPELINE_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;pipelines&quot;</span><span class="p">,</span> <span class="n">PIPELINE_NAME</span><span class="p">)</span>
+<span class="n">METADATA_PATH</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">,</span> <span class="n">PIPELINE_NAME</span><span class="p">,</span> <span class="s2">&quot;metadata.db&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h3 id="define-pipeline-components">Define Pipeline Components</h3>
+<p><div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">tfx.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">CsvExampleGen</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tfx.orchestration.experimental.interactive.interactive_context</span><span class="w"> </span><span class="kn">import</span> <span class="n">InteractiveContext</span>
+
+<span class="n">context</span> <span class="o">=</span> <span class="n">InteractiveContext</span><span class="p">()</span>
+
+<span class="n">example_gen</span> <span class="o">=</span> <span class="n">CsvExampleGen</span><span class="p">(</span><span class="n">input_base</span><span class="o">=</span><span class="s2">&quot;data/&quot;</span><span class="p">)</span>
+<span class="n">context</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">example_gen</span><span class="p">)</span>
+</code></pre></div>
+You can visualize the generated schema, examples, and anomalies with TensorBoard or Jupyter.</p>
+<hr />
+<h2 id="step-3-feature-engineering-and-model-training">Step 3: Feature Engineering and Model Training</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">tfx.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">Transform</span><span class="p">,</span> <span class="n">Trainer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tfx.proto</span><span class="w"> </span><span class="kn">import</span> <span class="n">trainer_pb2</span>
+
+<span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span>
+    <span class="n">module_file</span><span class="o">=</span><span class="s1">&#39;model.py&#39;</span><span class="p">,</span>  <span class="c1"># Your model logic here</span>
+    <span class="n">examples</span><span class="o">=</span><span class="n">example_gen</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;examples&#39;</span><span class="p">],</span>
+    <span class="n">train_args</span><span class="o">=</span><span class="n">trainer_pb2</span><span class="o">.</span><span class="n">TrainArgs</span><span class="p">(</span><span class="n">num_steps</span><span class="o">=</span><span class="mi">1000</span><span class="p">),</span>
+    <span class="n">eval_args</span><span class="o">=</span><span class="n">trainer_pb2</span><span class="o">.</span><span class="n">EvalArgs</span><span class="p">(</span><span class="n">num_steps</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="n">context</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">trainer</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="step-4-evaluating-and-pushing">Step 4: Evaluating and Pushing</h2>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">tfx.components</span><span class="w"> </span><span class="kn">import</span> <span class="n">Evaluator</span><span class="p">,</span> <span class="n">Pusher</span>
+
+<span class="n">evaluator</span> <span class="o">=</span> <span class="n">Evaluator</span><span class="p">(</span>
+    <span class="n">examples</span><span class="o">=</span><span class="n">example_gen</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;examples&#39;</span><span class="p">],</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">trainer</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">pusher</span> <span class="o">=</span> <span class="n">Pusher</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">trainer</span><span class="o">.</span><span class="n">outputs</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">],</span>
+    <span class="n">push_destination</span><span class="o">=</span><span class="n">tfx</span><span class="o">.</span><span class="n">proto</span><span class="o">.</span><span class="n">pusher_pb2</span><span class="o">.</span><span class="n">PushDestination</span><span class="p">(</span>
+        <span class="n">filesystem</span><span class="o">=</span><span class="n">tfx</span><span class="o">.</span><span class="n">proto</span><span class="o">.</span><span class="n">pusher_pb2</span><span class="o">.</span><span class="n">PushDestination</span><span class="o">.</span><span class="n">Filesystem</span><span class="p">(</span>
+            <span class="n">base_directory</span><span class="o">=</span><span class="s2">&quot;serving_model/&quot;</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="n">context</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">pusher</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="optional-orchestration-tools">Optional: Orchestration Tools</h2>
+<p>TFX integrates with orchestrators like:</p>
+<ul>
+<li>
+<p><strong>Apache Airflow</strong></p>
+</li>
+<li>
+<p><strong>Kubeflow Pipelines</strong></p>
+</li>
+<li>
+<p><strong>Vertex AI Pipelines</strong> (GCP)</p>
+</li>
+<li>
+<p><strong>Dagster</strong> (community)</p>
+</li>
+</ul>
+<p>This lets you <strong>schedule</strong>, <strong>version</strong>, and <strong>monitor</strong> your pipelines in production environments.</p>
+<hr />
+<h2 id="bonus-features">Bonus Features</h2>
+<p><strong>Model Blessing</strong>: Only deploy models that pass thresholds</p>
+<p><strong>CI/CD for ML</strong>: Automate training, evaluation, and deployment</p>
+<p><strong>ML Metadata Tracking</strong>: Reproducibility and lineage</p>
+<p><strong>TensorBoard Integration</strong>: For monitoring and debugging</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<p>In this chapter, you learned:</p>
+<ul>
+<li>
+<p>What TensorFlow Extended (TFX) is and why it matters in production</p>
+</li>
+<li>
+<p>How to build a simple TFX pipeline: ingest → validate → train → <strong>deploy</strong></p>
+</li>
+<li>
+<p>How to scale with orchestration and <strong>CI/CD</strong> tools</p>
+</li>
+<li>
+<p>How TFX promotes <strong>reliability</strong>, <strong>observability</strong>, and <strong>reproducibility</strong> in ML workflows</p>
+</li>
+</ul>
+<p>TFX is your bridge between research and reality. It ensures your models are not only <strong>accurate</strong>, but also <strong>trusted</strong>, <strong>trackable</strong>, and <strong>repeatable</strong> in the messy world of production systems.</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
