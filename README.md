@@ -1,95 +1,107 @@
-![GitHub last commit](https://img.shields.io/github/last-commit/McKlay/pytorch-companion-book)
-![GitHub Repo stars](https://img.shields.io/github/stars/McKlay/pytorch-companion-book?style=social)
-![GitHub forks](https://img.shields.io/github/forks/McKlay/pytorch-companion-book?style=social)
-![MIT License](https://img.shields.io/github/license/McKlay/pytorch-companion-book)
+![GitHub last commit](https://img.shields.io/github/last-commit/McKlay/TensorFlow-Companion-Book)
+![GitHub Repo stars](https://img.shields.io/github/stars/McKlay/TensorFlow-Companion-Book?style=social)
+![GitHub forks](https://img.shields.io/github/forks/McKlay/TensorFlow-Companion-Book?style=social)
+![MIT License](https://img.shields.io/github/license/McKlay/TensorFlow-Companion-Book)
 
-![Visitors](https://visitor-badge.laobi.icu/badge?page_id=McKlay.pytorch-companion-book)
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=McKlay.TensorFlow-Companion-Book)
 
+![Dark Mode Ready](https://img.shields.io/badge/UI-dark--mode-111827?style=flat&logo=visualstudio&logoColor=white)
+![Dark Mode](https://img.shields.io/badge/theme-dark--mode-111827?style=flat&logo=materialdesign&logoColor=white)
+![Built with TensorFlow](https://img.shields.io/badge/built%20with-TensorFlow-FF6F00?style=flat&logo=tensorflow&logoColor=white)
 
+# TensorFlow Builder’s Companion Book
 
-# PyTorch Builder’s Companion Book
+> "From Tensors to Vision & NLP — a deep dive into TensorFlow for learners, builders, and researchers."
 
-> A human-readable, API-structured technical book that explores the core of `torch` — the beating heart of PyTorch.
-
-**Live Site**: [https://mcklay.github.io/pytorch-companion-book/](https://mcklay.github.io/pytorch-companion-book/)  
+**Live Site**: [https://mcklay.github.io/TensorFlow-Companion-Book/](https://mcklay.github.io/TensorFlow-Companion-Book/)  
 Author: [Clay Mark Sarte](https://github.com/McKlay)  
-Built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) | Powered by [PyTorch](https://pytorch.org)
+Built with [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) | Powered by [TensorFlow](https://www.tensorflow.org)
 
 ---
 
-## What This Is
+## 📘 What This Is
 
-The **PyTorch Builder’s Companion Book** is a complete, well-structured learning reference and field guide to the core PyTorch `torch` API.  
-It focuses on:
+The **TensorFlow Builder’s Companion Book** is a personal guide and practical reference to mastering TensorFlow — structured like a living technical notebook.
 
-- Deep exploration of `torch.Tensor`, autograd, CUDA, dtype/device handling
-- Broadcasting, math ops, FFTs, `torch.linalg`, `torch.special`, and more
-- Practical, readable use cases with code-first explanations
-- Tools like `torch.utils.data`, `torch.profiler`, and debugging best practices
+It blends step-by-step tutorials, narrative explanations, and real-world examples across:
 
-Whether you’re building deep learning models, exploring low-level tensor logic, or preparing for interviews, this book offers an excellent and visual foundation.
+- Tensor mechanics (indexing, broadcasting, special tensors)
+- Model-building (Keras APIs, layers, loss, training logic)
+- Natural Language Processing (tokenization, RNNs, Transformers)
+- Computer Vision (CNNs, image classification, GANs)
+- Production tools (TF Lite, TFX, Hugging Face)
+
+Whether you’re experimenting, preparing for interviews, or deploying ML systems, this book helps you go deep — cleanly and confidently.
 
 ---
 
 ## Table of Contents
 
-The book is divided into four parts + appendices:
+The book is organized into 6 core parts:
 
-### Part I: Getting Started
-- What is `torch` and Why Does It Matter?
-- Installation & Setup
-- Tensor Fundamentals
+### Part I: Understanding TensorFlow Fundamentals
+- What is TensorFlow?
+- Architecture & Installation
+- TensorFlow vs. Keras
+- First Tensor Example
 
-### Part II: torch API Deep Dive
-- torch.Tensor: Creation, Ops, Gradients
-- Data Types, Devices, and Casting
-- Random Sampling & Reproducibility
-- Math, Broadcasting, Autograd
+### Part II: Tensor Mechanics and Computation
+- Indexing, Broadcasting, Ragged & Sparse Tensors
+- Variables, GradientTape, tf.function, Numerical Ops
 
-### Part III: Specialized Modules
-- `torch.linalg` – Linear Algebra
-- `torch.nn.functional` – Stateless ops
-- `torch.special`, `torch.fft`, `torch.utils`, and low-level storage
+### Part III: Model Building with Keras
+- Model Anatomy, Layers, Losses, Training Loops
+- Saving, Callbacks, and TensorBoard Visualization
 
-### Part IV: Real World
-- Using CUDA effectively
-- Interfacing with NumPy
-- Debugging, Profiling, and Best Practices
+### Part IV: Natural Language Processing with TensorFlow
+- Text Preprocessing, TF-IDF, RNNs & Transformers
+- Projects: Sentiment Analysis, Spam Detection
 
-### Appendices
-- Tensor Shape Cheat Sheet
-- PyTorch Idioms & Gotchas
-- Full torch API Reference Crosswalk
+### Part V: Computer Vision in TensorFlow
+- Convolutions, Data Augmentation, Image Classification
+- Object Detection, Mask Detection, GANs
+
+### Part VI: Real-World Applications
+- Time Series Forecasting, Recommender Systems
+- TensorFlow Lite, TFX Pipelines, Hugging Face Integration
 
 ---
 
-## Getting Started Locally
+## Run the Book Locally
 
-If you’d like to clone this and run it locally:
+If you'd like to explore this book offline or edit it yourself:
 
 ```bash
-git clone https://github.com/McKlay/pytorch-companion-book.git
-cd pytorch-companion-book
+git clone https://github.com/McKlay/TensorFlow-Companion-Book.git
+cd TensorFlow-Companion-Book
 pip install mkdocs-material
 mkdocs serve
-View at: http://127.0.0.1:8000
+# Open: http://127.0.0.1:8000
 ```
----
 
-Contributing
-Contributions, ideas, and corrections are welcome!
-
-Feel free to open:
-
-PRs to add or improve chapters
-
-Issues for broken examples or typos
-
-Discussions for expansion (e.g., torchvision, torch.fx, torch.compile)
+To deploy or publish:
+```bash
+mkdocs gh-deploy
+```
 
 ---
 
-License  
-MIT License © Clay Mark Sarte  
-You are free to fork, learn from, and build upon this work — with credit.  
-“Shape your tensors, or they will shape your debugging sessions.”  
+## Contributing
+
+Feel free to:
+
+- Open issues for bugs, typos, or suggestions
+
+- Submit pull requests for improvements or extra chapters
+
+- Discuss integration ideas (e.g., Colab links, datasets)
+
+---
+
+## License
+
+MIT License © Clay Mark Sarte
+Free to learn, fork, and remix with attribution.
+"A neural net’s journey begins with a single tensor."
+
+---
