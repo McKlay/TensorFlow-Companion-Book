@@ -100,8 +100,8 @@ Feel free to:
 
 ## License
 
-MIT License © Clay Mark Sarte
-Free to learn, fork, and remix with attribution.
+MIT License © Clay Mark Sarte  
+Free to learn, fork, and remix with attribution.  
 "A neural net’s journey begins with a single tensor."
 
 ---
