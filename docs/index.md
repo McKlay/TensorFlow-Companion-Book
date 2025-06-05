@@ -1,42 +1,46 @@
 # TensorFlow Builder’s Companion Book
 
-Welcome to the **TensorFlow Builder’s Companion Book** — your step-by-step guide to understanding the core of PyTorch through real-world reasoning, intuitive code explanations, and progressive deep dives.
+Welcome to the **TensorFlow Builder’s Companion Book** — your step-by-step guide to understanding the heart of TensorFlow through real-world reasoning, intuitive code walkthroughs, and progressively deeper system-level insights.
 
-This book is structured for learners, builders, and AI engineers who want to move beyond black-box usage and gain mastery over `torch`, the beating heart of PyTorch.
+This book is structured for learners, builders, and AI engineers who want to move beyond plug-and-play Keras models and gain mastery over `tf`, the core engine that powers TensorFlow.
 
 ---
 
 ## What You'll Learn
 
-- What `torch` actually is and why it’s essential.
-- How to manipulate tensors, the basic unit of deep learning.
-- A detailed walkthrough of every major API in `torch`, including:
-  - `torch.Tensor`
-  - `torch.nn.functional`
-  - `torch.linalg`, `torch.fft`, `torch.utils`, and more.
-- The math behind the code — with autograd, broadcasting, and matrix ops.
-- Real-world debugging, CUDA usage, and best practices.
+- What `tf.Tensor` actually is and how TensorFlow represents computation.
+- How to slice, reshape, broadcast, and train using tensors.
+- A clear breakdown of every major API in TensorFlow, including:
+  - `tf.Tensor`, `tf.Variable`, `tf.data`, `tf.GradientTape`
+  - `tf.keras` (Sequential, Functional, Subclassing APIs)
+  - `tf.function`, `tf.math`, `tf.strings`, `tf.sparse`, and more.
+- How TensorFlow handles training, backpropagation, optimization, and deployment.
+- Real-world debugging, GPU support, and model lifecycle management.
 
 ---
 
 ## Who This Book Is For
 
-- Aspiring AI engineers learning PyTorch from the ground up.
-- Experienced devs transitioning from NumPy or TensorFlow.
-- Researchers building custom models and layers.
-- Anyone who wants to understand the *why*, not just the *how*.
+- Aspiring ML and deep learning engineers starting with TensorFlow.
+- PyTorch users transitioning into the TensorFlow ecosystem.
+- Developers and researchers building custom training loops and models.
+- Anyone who wants to understand the *how* and *why* behind TensorFlow internals.
 
 ---
 
 ## Structure
 
-This book is organized by topic depth, starting with core `torch` principles and progressing to real-world applications. Each chapter includes:
+This book is organized in progressive layers, from fundamentals to deployment-ready applications. Each chapter is packed with:
 
 - Human-friendly explanations  
-- Code samples with output  
-- Gotchas and debugging tips  
-- Cross-references to PyTorch docs
+- Annotated code samples  
+- Common gotchas and TensorFlow quirks  
+- Concept-to-practice connections  
+- Optional links to Colab notebooks for hands-on learning
 
 ---
 
-*Created and maintained by [Clay Mark Sarte](https://www.linkedin.com/in/clay-mark-sarte-283855147/)*
+*Created and maintained by [Clay Mark Sarte](https://www.linkedin.com/in/clay-mark-sarte-283855147/)*  
+*Built with 💡 curiosity and powered by TensorFlow graphs*
+
+
