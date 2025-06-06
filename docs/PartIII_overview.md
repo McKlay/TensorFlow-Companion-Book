@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Part III Summary: Model Building with TensorFlow & Keras
 
 In Part III, we shift gears from understanding tensors and computation to actually building trainable models. This section teaches you how to construct, train, evaluate, and deploy neural networks using tf.keras, TensorFlow’s high-level model API.

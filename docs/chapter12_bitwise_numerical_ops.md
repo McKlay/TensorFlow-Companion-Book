@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 12: Bitwise & Numerical Operations
 
 > “*Machine learning is built on numbers—but sharpened with operations.*”

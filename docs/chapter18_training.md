@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 18: Model Training with fit() and evaluate()
 
 > “*With great abstraction comes great productivity. `fit()` lets you train deep models with a single line.*”

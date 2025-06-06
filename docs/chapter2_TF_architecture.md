@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 2: Architecture of TensorFlow
 
 > “Systems that scale don’t happen by accident—they're designed to flow.”

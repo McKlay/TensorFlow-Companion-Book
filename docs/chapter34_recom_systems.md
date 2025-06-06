@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 34: Recommender Systems
 
 > “*The best suggestions are those you didn’t even know you needed — until the machine learned them.*”

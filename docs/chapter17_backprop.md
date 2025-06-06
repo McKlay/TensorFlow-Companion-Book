@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 17: Backpropagation & Gradient Descent
 
 > “*A neural network learns by looking backward—adjusting the past to improve the future.*”

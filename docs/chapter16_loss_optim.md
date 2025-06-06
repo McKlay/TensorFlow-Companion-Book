@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 16: Loss Functions & Optimizers
 
 > “*Without a compass, even the smartest network gets lost. Loss guides learning. Optimization moves us forward.*”

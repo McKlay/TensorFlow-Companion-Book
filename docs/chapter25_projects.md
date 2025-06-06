@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 25: NLP Projects — Spam Detection, Sentiment Analysis, Autocomplete
 
 > “*Language is powerful. Teaching machines to understand it unlocks infinite possibilities.*”

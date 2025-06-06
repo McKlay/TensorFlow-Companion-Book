@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 27: Data Augmentation
 
 “The best way to generalize is to never see the same image twice.”

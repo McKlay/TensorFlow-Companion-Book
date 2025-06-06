@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 8: Ragged, Sparse, and String Tensors
 
 > “*Not all data fits in neat boxes. TensorFlow still makes it work*.”

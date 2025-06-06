@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Part VI Summary: Real-World Applications
 
 While the earlier parts taught us how to build models, Part VI is where we bring everything to life.

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 14: Building a Neural Network from Scratch
 
 > “*Before you rely on magic, understand the machinery beneath it.*”

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 35: TensorFlow Lite & Mobile Deployment
 
 > “*A model isn’t truly intelligent until it fits in your pocket.*”

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 30: Face Mask Detection
 
 > “*When vision meets responsibility—models that see and protect.*”

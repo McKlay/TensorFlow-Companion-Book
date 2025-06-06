@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 24: Transformers in TensorFlow (from Scratch)
 
 > “*Forget recurrence. Attention is all you need.*”

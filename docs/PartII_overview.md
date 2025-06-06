@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 #  Part II: Tensor Mechanics and Computation
 
 > “*Before models can learn, data must be shaped, sliced, and understood.*”

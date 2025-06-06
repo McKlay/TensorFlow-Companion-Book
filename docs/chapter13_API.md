@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 13: TensorFlow Keras API – Anatomy of a Model
 
 > “*A model is just an idea—until it gets layers, weights, and shape.*”

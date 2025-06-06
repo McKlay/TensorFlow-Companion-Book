@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 15: Layers & Activation Functions
 
 > “*Neurons speak in activations. Layers translate

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 37: Integrating TensorFlow with Hugging Face
 
 > “*When TensorFlow meets Hugging Face, models gain both muscle and memory.*”

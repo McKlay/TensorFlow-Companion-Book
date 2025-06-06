@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 29: Object Detection
 
 > “*Image classification tells you what—object detection tells you where.*”

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 23: RNNs & LSTMs
 
 > “*Words are not isolated—they remember what came before. RNNs give models a sense of time.*”

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Part V Summary: Computer Vision in TensorFlow
 
 Part V takes us from sequences of words to arrays of pixels. In this section, we explore how machines can see, interpret, and generate images using TensorFlow’s deep learning tools.

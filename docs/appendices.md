@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Appendices
 
 > “*The end of the book is the beginning of mastery.*”

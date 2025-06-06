@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 22: TF-IDF, Bag-of-Words Representations
 
 > “*Before transformers, we counted words. And in that counting, meaning emerged.*”

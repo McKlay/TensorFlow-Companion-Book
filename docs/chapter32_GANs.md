@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 32: GANs for Image Generation
 
 > “*Two networks, locked in a dance. One imagines, the other critiques. Together, they create.*”

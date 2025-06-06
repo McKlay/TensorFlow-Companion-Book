@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 28: Image Classification
 
 > “*At the end of the pipeline, it’s about making a decision—cat or dog, plane or car, tumor or healthy tissue.*”

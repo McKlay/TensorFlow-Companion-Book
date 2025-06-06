@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 9: Variables & Trainable Parameters
 
 > “*A model learns by changing its variables—not its mind*.”

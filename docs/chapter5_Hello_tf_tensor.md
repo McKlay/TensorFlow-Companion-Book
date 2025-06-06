@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 5: Hello, tf.Tensor!
 
 “All of machine learning boils down to manipulating tensors—smartly.”

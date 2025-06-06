@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 31: Image Segmentation
 
 > “*If object detection draws boxes, image segmentation draws boundaries.*”

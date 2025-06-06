@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 33: Time Series Forecasting
 
 > “*The best way to predict the future is to model the past — and time series helps us do just that.*”

@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Part IV Summary: Natural Language Processing with TensorFlow
 
 In Part IV, we shift from numeric tensors to language understanding. This section explores how TensorFlow handles text—turning characters and sentences into meaningful vectors that machines can process.

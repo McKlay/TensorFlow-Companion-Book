@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 36: TensorFlow Extended (TFX) for Production Pipelines
 
 > “*Models aren’t magic — they’re the output of a pipeline that’s reproducible, testable, and scalable.*”

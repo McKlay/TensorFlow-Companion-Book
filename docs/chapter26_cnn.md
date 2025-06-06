@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 26: Convolution Layers & CNNs
 
 > “*If fully connected layers taught our models to think, convolutional layers taught them to see.*”

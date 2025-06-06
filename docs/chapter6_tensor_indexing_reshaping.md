@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 6: Tensor Indexing & Reshaping
 
 “Tensors may be infinite in dimension, but mastery begins with the first slice.”

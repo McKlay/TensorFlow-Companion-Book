@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 11: Graphs & Functions (@tf.function)
 
 > “*First you write Python. Then you write TensorFlow. Then you make Python act like TensorFlow.*”

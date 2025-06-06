@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 19: Saving, Loading, and Callbacks
 
 > “*Training is hard-earned. Never lose progress. Save smart, load fast, and train with foresight.*”

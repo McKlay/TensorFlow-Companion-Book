@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 21: Text Preprocessing & Tokenization
 
 > “*In the world of language, meaning is hidden in tokens. Before a model can read, we must teach it to parse.*”

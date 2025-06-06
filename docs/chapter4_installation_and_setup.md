@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 4: Installation & Setup
 
 > “A neural net’s journey begins with a single tensor.”

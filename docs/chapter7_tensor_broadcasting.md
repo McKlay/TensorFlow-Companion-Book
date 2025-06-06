@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 7: Tensor Broadcasting
 
 > “Broadcasting is TensorFlow’s way of saying: ‘Relax, I’ve got this shape mismatch.’”

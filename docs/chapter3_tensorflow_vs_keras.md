@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 3: TensorFlow vs Keras
 
 > “Abstraction isn’t just convenience—it’s control disguised as simplicity.”

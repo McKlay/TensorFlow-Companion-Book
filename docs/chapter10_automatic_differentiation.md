@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 10: Automatic Differentiation `(tf.GradientTape)`
 
 > “*The power to learn lies not in the function—but in how it changes*.”

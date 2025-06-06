@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # TensorFlow Builder's Companion Book
 
 Welcome to the official beginning of your TensorFlow journey—

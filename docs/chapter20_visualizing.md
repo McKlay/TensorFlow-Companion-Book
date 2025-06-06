@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Chapter 20: Visualizing Model Progress with TensorBoard
 
 > “*What you can’t see, you can’t debug. TensorBoard turns numbers into insight.*”

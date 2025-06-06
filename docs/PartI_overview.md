@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Part I: Understanding TensorFlow Fundamentals
 
 > “*You can’t build AI until you understand the engine that powers it.*”
