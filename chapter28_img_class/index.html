@@ -26,7 +26,7 @@
     
     
       
-        <title>📄 Chapter 28: Image Classification - TensorFlow Builder’s Companion Book</title>
+        <title>      Chapter 28 - TensorFlow Builder’s Companion Book</title>
       
     
     
@@ -64,10 +64,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="deep-blue" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              📄 Chapter 28: Image Classification
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 28
             
           </span>
         </div>
@@ -120,7 +122,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -183,6 +211,8 @@
           
             
               
+                
+              
               <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -215,7 +245,7 @@
   
   
   <span class="md-ellipsis">
-    Home
+    Table of Contents
     
   </span>
   
@@ -229,23 +259,11 @@
       
   
   
+    
   
   
+  
     
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
     
     
     
@@ -255,13 +273,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -269,7 +285,7 @@
   
   
   <span class="md-ellipsis">
-    📘 Part I: Understanding TensorFlow Fundamentals
+    
     
   </span>
   
@@ -277,12 +293,35 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            📘 Part I: Understanding TensorFlow Fundamentals
+            
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Preface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    &nbsp; Preface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -296,7 +335,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    &nbsp;&nbsp; 📖 Part I: Foundations
     
   </span>
   
@@ -319,7 +358,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 1: What is TensorFlow?
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 1
     
   </span>
   
@@ -342,7 +381,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 2: Installation & Setup
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 2
     
   </span>
   
@@ -365,7 +404,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 3: TensorFlow vs. Keras
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 3
     
   </span>
   
@@ -388,7 +427,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 4: Installation & Setup
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 4
     
   </span>
   
@@ -411,7 +450,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 5: Hello, tf.tensor!
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 5
     
   </span>
   
@@ -421,76 +460,6 @@
   
 
               
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    📘 Part II: Tensor Mechanics and Computation
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            📘 Part II: Tensor Mechanics and Computation
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -504,7 +473,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    &nbsp;&nbsp; 📖 Part II: Tensor Mechanics
     
   </span>
   
@@ -527,7 +496,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 6: Tensor Indexing & Reshaping
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 6
     
   </span>
   
@@ -550,7 +519,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 7: Tensor Broadcasting
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 7
     
   </span>
   
@@ -573,7 +542,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 8: Ragged, Sparse, & String Tensors
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 8
     
   </span>
   
@@ -596,7 +565,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 9: Variables & Trainable Parameters
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 9
     
   </span>
   
@@ -619,7 +588,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 10: Automatic Differentiation
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 10
     
   </span>
   
@@ -642,7 +611,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 11: Graphs & Functions
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 11
     
   </span>
   
@@ -665,7 +634,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 12: Bitwise & Numerical Operations
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 12
     
   </span>
   
@@ -675,78 +644,6 @@
   
 
               
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    📘 Part III: Specialized Modules in torch
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            📘 Part III: Specialized Modules in torch
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -760,7 +657,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    &nbsp;&nbsp; 📖 Part III: Special Modules
     
   </span>
   
@@ -783,7 +680,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 13: TensorFlow Keras API: Anatomy of a Model
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 13
     
   </span>
   
@@ -806,7 +703,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 14: Building a Neural Network from Scratch
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 14
     
   </span>
   
@@ -829,7 +726,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 15: Layers & Activation Functions
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 15
     
   </span>
   
@@ -852,7 +749,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 16: Loss Functions & Optimizers
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 16
     
   </span>
   
@@ -875,7 +772,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 17: Backpropagation & Gradient Descent
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 17
     
   </span>
   
@@ -898,7 +795,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 18: Model Training with fit() and evaluate()
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 18
     
   </span>
   
@@ -921,7 +818,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 19: Saving, Loading, and Callbacks
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 19
     
   </span>
   
@@ -944,7 +841,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 20: Visualizing Model Progress with TensorBoard
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 20
     
   </span>
   
@@ -954,72 +851,6 @@
   
 
               
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    📘 Part IV: Natural Language Processing with TensorFlow
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            📘 Part IV: Natural Language Processing with TensorFlow
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1033,7 +864,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    &nbsp;&nbsp; 📖 Part IV: NLP
     
   </span>
   
@@ -1056,7 +887,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 21: Text Preprocessing & Tokenization
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 21
     
   </span>
   
@@ -1079,7 +910,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 22: TF-IDF, Bag-of-Words Representations
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 22
     
   </span>
   
@@ -1102,7 +933,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 23: RNNs & LSTMs
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 23
     
   </span>
   
@@ -1125,7 +956,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 24: Transformers in TensorFlow (from scratch)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 24
     
   </span>
   
@@ -1148,7 +979,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 25: NLP Projects
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 25
     
   </span>
   
@@ -1158,76 +989,6 @@
   
 
               
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    📘 Part V: Computer Vision in TensorFlow
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            📘 Part V: Computer Vision in TensorFlow
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1241,7 +1002,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    &nbsp;&nbsp; 📖 Part V: Computer Vision
     
   </span>
   
@@ -1264,7 +1025,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 26: Convolution Layers & CNNs
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 26
     
   </span>
   
@@ -1287,7 +1048,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 27: Data Augmentation
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 27
     
   </span>
   
@@ -1319,7 +1080,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 28: Image Classification
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 28
     
   </span>
   
@@ -1332,7 +1093,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 28: Image Classification
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 28
     
   </span>
   
@@ -1480,7 +1241,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 29: Object Detection
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 29
     
   </span>
   
@@ -1503,7 +1264,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 30: Face Mask Detection
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 30
     
   </span>
   
@@ -1526,7 +1287,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 31: Image Segmentation
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 31
     
   </span>
   
@@ -1549,7 +1310,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 32: GANs for Image Generation
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 32
     
   </span>
   
@@ -1559,72 +1320,6 @@
   
 
               
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    📘 Part VI: Real-World Applications
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            📘 Part VI: Real-World Applications
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1638,7 +1333,7 @@
   
   
   <span class="md-ellipsis">
-    Overview
+    &nbsp;&nbsp; 📖 Part VI: Real-World App
     
   </span>
   
@@ -1661,7 +1356,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 33: Time Series Forecasting
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 28
     
   </span>
   
@@ -1684,7 +1379,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 34: Recommender Systems
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 29
     
   </span>
   
@@ -1707,7 +1402,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 35: TensorFlow Lite & Mobile Deployment
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 30
     
   </span>
   
@@ -1730,7 +1425,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 36: TensorFlow Extended (TFX) for Production Pipelines
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 31
     
   </span>
   
@@ -1753,7 +1448,7 @@
   
   
   <span class="md-ellipsis">
-    📄 Chapter 37: Bonus: Integrating TensorFlow with Hugging Face
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chapter 32
     
   </span>
   
@@ -1763,62 +1458,6 @@
   
 
               
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    Appendices
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            Appendices
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1832,7 +1471,7 @@
   
   
   <span class="md-ellipsis">
-    Appendices
+    &nbsp;&nbsp; 📖 Appendices
     
   </span>
   
@@ -1858,7 +1497,9 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1994,15 +1635,17 @@
               <article class="md-content__inner md-typeset">
                 
                   
+  
 
 
 
-<h1 id="chapter-28-image-classification">Chapter 28: Image Classification</h1>
+
+<h1 id="chapter-28-image-classification">Chapter 28: Image Classification<a class="headerlink" href="#chapter-28-image-classification" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>“<em>At the end of the pipeline, it’s about making a decision—cat or dog, plane or car, tumor or healthy tissue.</em>”</p>
 </blockquote>
 <hr />
-<h2 id="what-is-image-classification">What Is Image Classification?</h2>
+<h2 id="what-is-image-classification">What Is Image Classification?<a class="headerlink" href="#what-is-image-classification" title="Permanent link">&para;</a></h2>
 <p>Image classification is the task of assigning a label from a predefined set of categories to an input image. Think:</p>
 <ul>
 <li>Is this image a cat or a dog?  </li>
@@ -2011,10 +1654,10 @@
 </ul>
 <p>It’s one of the simplest yet most powerful applications of CNNs.</p>
 <hr />
-<h2 id="building-an-end-to-end-classifier-with-tensorflow">Building an End-to-End Classifier with TensorFlow</h2>
+<h2 id="building-an-end-to-end-classifier-with-tensorflow">Building an End-to-End Classifier with TensorFlow<a class="headerlink" href="#building-an-end-to-end-classifier-with-tensorflow" title="Permanent link">&para;</a></h2>
 <p>Let’s classify images from CIFAR-10, a dataset of 60,000 32x32 color images in 10 classes: airplane, car, bird, cat, deer, dog, frog, horse, ship, truck.</p>
 <hr />
-<h3 id="step-1-load-preprocess-the-dataset">Step 1: Load &amp; Preprocess the Dataset</h3>
+<h3 id="step-1-load-preprocess-the-dataset">Step 1: Load &amp; Preprocess the Dataset<a class="headerlink" href="#step-1-load-preprocess-the-dataset" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">tensorflow.keras</span><span class="w"> </span><span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">models</span>
 
@@ -2025,7 +1668,7 @@
 <span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">=</span> <span class="n">x_train</span> <span class="o">/</span> <span class="mf">255.0</span><span class="p">,</span> <span class="n">x_test</span> <span class="o">/</span> <span class="mf">255.0</span>
 </code></pre></div>
 <hr />
-<h3 id="step-2-define-the-model-architecture">Step 2: Define the Model Architecture</h3>
+<h3 id="step-2-define-the-model-architecture">Step 2: Define the Model Architecture<a class="headerlink" href="#step-2-define-the-model-architecture" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">model</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
     <span class="n">layers</span><span class="o">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
     <span class="n">layers</span><span class="o">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
@@ -2041,7 +1684,7 @@
 <span class="p">])</span>
 </code></pre></div>
 <hr />
-<h3 id="step-3-compile-and-train">Step 3: Compile and Train</h3>
+<h3 id="step-3-compile-and-train">Step 3: Compile and Train<a class="headerlink" href="#step-3-compile-and-train" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span>
               <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span>
               <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
@@ -2049,12 +1692,12 @@
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
 </code></pre></div>
 <hr />
-<h3 id="step-4-evaluate-the-model">Step 4: Evaluate the Model</h3>
+<h3 id="step-4-evaluate-the-model">Step 4: Evaluate the Model<a class="headerlink" href="#step-4-evaluate-the-model" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">test_loss</span><span class="p">,</span> <span class="n">test_acc</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Test accuracy: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h3 id="step-5-make-predictions">Step 5: Make Predictions</h3>
+<h3 id="step-5-make-predictions">Step 5: Make Predictions<a class="headerlink" href="#step-5-make-predictions" title="Permanent link">&para;</a></h3>
 <p><div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
@@ -2064,7 +1707,7 @@ You can match the result to CIFAR-10’s label map:
 <div class="highlight"><pre><span></span><code><span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;airplane&#39;</span><span class="p">,</span><span class="s1">&#39;automobile&#39;</span><span class="p">,</span><span class="s1">&#39;bird&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;deer&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">,</span><span class="s1">&#39;frog&#39;</span><span class="p">,</span><span class="s1">&#39;horse&#39;</span><span class="p">,</span><span class="s1">&#39;ship&#39;</span><span class="p">,</span><span class="s1">&#39;truck&#39;</span><span class="p">]</span>
 </code></pre></div></p>
 <hr />
-<h2 id="add-data-augmentation-optional">Add Data Augmentation (Optional)</h2>
+<h2 id="add-data-augmentation-optional">Add Data Augmentation (Optional)<a class="headerlink" href="#add-data-augmentation-optional" title="Permanent link">&para;</a></h2>
 <p>To improve generalization:</p>
 <div class="highlight"><pre><span></span><code><span class="n">data_augmentation</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">Sequential</span><span class="p">([</span>
     <span class="n">layers</span><span class="o">.</span><span class="n">RandomFlip</span><span class="p">(</span><span class="s1">&#39;horizontal&#39;</span><span class="p">),</span>
@@ -2079,7 +1722,7 @@ You can match the result to CIFAR-10’s label map:
 <span class="p">])</span>
 </code></pre></div>
 <hr />
-<h2 id="metrics-to-monitor">Metrics to Monitor</h2>
+<h2 id="metrics-to-monitor">Metrics to Monitor<a class="headerlink" href="#metrics-to-monitor" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2103,11 +1746,11 @@ You can match the result to CIFAR-10’s label map:
 </tbody>
 </table>
 <hr />
-<h2 id="try-it-live">Try It Live</h2>
+<h2 id="try-it-live">Try It Live<a class="headerlink" href="#try-it-live" title="Permanent link">&para;</a></h2>
 <p>🔗 <a href="https://colab.research.google.com/">Colab Notebook: CIFAR-10 Classifier</a><br />
 (To be linked in the companion repo)</p>
 <hr />
-<h2 id="summary">Summary</h2>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>In this chapter, you built a complete image classification model using CNNs. You learned to:</p>
 <ul>
 <li>Preprocess data and normalize images  </li>
@@ -2122,8 +1765,13 @@ You can match the result to CIFAR-10’s label map:
 
 
 
+  
+  
 
 
+
+
+  
 
 
 
@@ -2151,6 +1799,32 @@ You can match the result to CIFAR-10’s label map:
   
 </div>
       
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/McKlay" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/clay-mark-sarte-283855147/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
     </div>
   </div>
 </footer>
@@ -2163,7 +1837,7 @@ You can match the result to CIFAR-10’s label map:
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.expand", "content.code.copy", "content.code.annotate", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
